@@ -13,6 +13,7 @@ import { IconButton, Stack } from "@mui/material";
 // icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Link from "next/link";
+import Header from "./Header";
 
 const NavItems = [
   {
@@ -43,44 +44,47 @@ const NavItems = [
 
 function Navbar() {
   return (
-    <AppBar position="static" className="bg-black">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Image src={logo} alt="logo" width={100} height={100} />
-          <Box className="w-full text-center">
-            {NavItems.map((page) => (
-              <Link key={page} href={page.pathname}>
-                <Button className="text-white">{page.route}</Button>
-              </Link>
-            ))}
-          </Box>
+    <>
+      <Header />
+      <AppBar position="static" className="bg-black">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Image src={logo} alt="logo" width={100} height={100} />
+            <Box className="w-full text-center">
+              {NavItems.map((page) => (
+                <Link key={page} href={page.pathname}>
+                  <Button className="text-white">{page.route}</Button>
+                </Link>
+              ))}
+            </Box>
 
-          <Box>
-            <Stack
-              direction="row"
-              sx={{
-                "& svg": {
-                  color: "white",
-                },
-              }}
-            >
-              <IconButton>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton>
-                <FacebookIcon />
-              </IconButton>
-            </Stack>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+            <Box>
+              <Stack
+                direction="row"
+                sx={{
+                  "& svg": {
+                    color: "white",
+                  },
+                }}
+              >
+                <IconButton>
+                  <FacebookIcon />
+                </IconButton>
+                <IconButton>
+                  <FacebookIcon />
+                </IconButton>
+                <IconButton>
+                  <FacebookIcon />
+                </IconButton>
+                <IconButton>
+                  <FacebookIcon />
+                </IconButton>
+              </Stack>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </>
   );
 }
 export default Navbar;
