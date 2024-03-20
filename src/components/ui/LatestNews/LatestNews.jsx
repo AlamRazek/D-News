@@ -87,6 +87,111 @@ const LatestNews = () => {
             </CardActionArea>
           </Card>
         </Grid>
+        <Grid item xs={6}>
+          <Card>
+            <CardActionArea>
+              <CardMedia>
+                <Image src={topNews2} alt="top-news" width={800} />
+              </CardMedia>
+              <CardContent>
+                <p
+                  className="
+            w-[100px]
+            bg-red-500
+            text-white
+            p-1
+            my-5
+            rounded
+            "
+                >
+                  Technology
+                </p>
+                <Typography gutterBottom>
+                  Bitcoin climbs as Elon Musk Says Tesla Likely to Accept it
+                  Again
+                </Typography>
+                <Typography gutterBottom className="my-3">
+                  By Awlad Hossain - Mar 18 2024
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its
+                  layout....
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item xs={6}>
+          <Card>
+            <CardActionArea>
+              <CardMedia>
+                <Image src={topNews2} alt="top-news" width={800} />
+              </CardMedia>
+              <CardContent>
+                <p
+                  className="
+            w-[100px]
+            bg-red-500
+            text-white
+            p-1
+            my-5
+            rounded
+            "
+                >
+                  Technology
+                </p>
+                <Typography gutterBottom>
+                  Bitcoin climbs as Elon Musk Says Tesla Likely to Accept it
+                  Again
+                </Typography>
+                <Typography gutterBottom className="my-3">
+                  By Awlad Hossain - Mar 18 2024
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its
+                  layout....
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item xs={6}>
+          <Card>
+            <CardActionArea>
+              <CardMedia>
+                <Image src={topNews2} alt="top-news" width={800} />
+              </CardMedia>
+              <CardContent>
+                <p
+                  className="
+            w-[100px]
+            bg-red-500
+            text-white
+            p-1
+            my-5
+            rounded
+            "
+                >
+                  Technology
+                </p>
+                <Typography gutterBottom>
+                  Bitcoin climbs as Elon Musk Says Tesla Likely to Accept it
+                  Again
+                </Typography>
+                <Typography gutterBottom className="my-3">
+                  By Awlad Hossain - Mar 18 2024
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its
+                  layout....
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
       </Grid>
     </Box>
   );
