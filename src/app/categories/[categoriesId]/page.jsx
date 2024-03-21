@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 const DynamicNewsPage = async ({ params, searchParams }) => {
   const { data } = await getCategoryNews(searchParams.category);
@@ -27,26 +28,32 @@ const DynamicNewsPage = async ({ params, searchParams }) => {
       >
         {data.map((news) => (
           <Grid key={news.id} item xs={6}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  sx={{
-                    "& img": {
-                      width: "100%",
-                      height: "250px",
-                    },
-                  }}
-                >
-                  <Image
-                    src={news?.thumbnail_url}
-                    alt="top-news"
-                    width={800}
-                    height={100}
-                  />
-                </CardMedia>
-                <CardContent>
-                  <span
-                    className="
+            <Link href={`/${news.category}/${news._id}`}>
+              <Card>
+                <CardActionArea>
+                  <CardMedia
+                    sx={{
+                      "& img": {
+                        width: "100%",
+                        height: "250px",
+                      },
+                    }}
+                  >
+                    {/*   // news?.thumbnail_url */}
+                    {news?.thumbnail_url ? (
+                      <Image
+                        src={news?.thumbnail_url}
+                        alt="top-news"
+                        width={800}
+                        height={100}
+                      />
+                    ) : (
+                      " "
+                    )}
+                  </CardMedia>
+                  <CardContent>
+                    <span
+                      className="
           w-[100px]
           bg-red-500
           text-white
@@ -54,25 +61,26 @@ const DynamicNewsPage = async ({ params, searchParams }) => {
           my-5
           rounded
           "
-                  >
-                    {news.category}
-                  </span>
-                  <Typography gutterBottom variant="h6">
-                    {news.title.length > 30
-                      ? news.title.slice(0, 30) + "..."
-                      : news.title}
-                  </Typography>
-                  <Typography gutterBottom className="my-3">
-                    By {news.author.name} - {news.author.published_date}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {news.details.length > 200
-                      ? news.details.slice(0, 200) + "..."
-                      : news.details}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+                    >
+                      {news.category}
+                    </span>
+                    <Typography gutterBottom variant="h6">
+                      {news.title.length > 30
+                        ? news.title.slice(0, 30) + "..."
+                        : news.title}
+                    </Typography>
+                    <Typography gutterBottom className="my-3">
+                      By {news.author.name} - {news.author.published_date}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {news.details.length > 200
+                        ? news.details.slice(0, 200) + "..."
+                        : news.details}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Link>
           </Grid>
         ))}
       </Grid>
