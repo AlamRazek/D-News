@@ -29,11 +29,23 @@ const DynamicNewsPage = async ({ params, searchParams }) => {
           <Grid key={news.id} item xs={6}>
             <Card>
               <CardActionArea>
-                <CardMedia>
-                  {/*  <Image src={topNews2} alt="top-news" width={800} /> */}
+                <CardMedia
+                  sx={{
+                    "& img": {
+                      width: "100%",
+                      height: "250px",
+                    },
+                  }}
+                >
+                  <Image
+                    src={news?.thumbnail_url}
+                    alt="top-news"
+                    width={800}
+                    height={100}
+                  />
                 </CardMedia>
                 <CardContent>
-                  <p
+                  <span
                     className="
           w-[100px]
           bg-red-500
@@ -44,16 +56,19 @@ const DynamicNewsPage = async ({ params, searchParams }) => {
           "
                   >
                     {news.category}
-                  </p>
-                  <Typography gutterBottom>
-                    Bitcoin climbs as Elon Musk Says Tesla Likely to Accept it
-                    Again
+                  </span>
+                  <Typography gutterBottom variant="h6">
+                    {news.title.length > 30
+                      ? news.title.slice(0, 30) + "..."
+                      : news.title}
                   </Typography>
                   <Typography gutterBottom className="my-3">
-                    By {news.author.name} - {news.author.publishd_date}
+                    By {news.author.name} - {news.author.published_date}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {news.details}
+                    {news.details.length > 200
+                      ? news.details.slice(0, 200) + "..."
+                      : news.details}
                   </Typography>
                 </CardContent>
               </CardActionArea>
